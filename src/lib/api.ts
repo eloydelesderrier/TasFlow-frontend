@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const instance = axios.create({
-  baseURL: "https://tas-flow-frontend.vercel.app/",
+  baseURL: "https://tas-flow-backend.up.railway.app/",
   headers: {
     "Content-Type": "application/json",
   }, // ajuste conforme o backend
