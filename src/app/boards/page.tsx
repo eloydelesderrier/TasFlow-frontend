@@ -61,7 +61,7 @@ export default function BoardsPage() {
     if (!editTitulo.trim()) return alert("Título é obrigatório");
 
     try {
-      await api.put(`http://localhost:8000/editar-board/${editBoardId}`, {
+      await api.put(`https://tas-flow-frontend.vercel.app/editar-board/${editBoardId}`, {
         titulo: editTitulo,
         descricao: editDescricao,
       });

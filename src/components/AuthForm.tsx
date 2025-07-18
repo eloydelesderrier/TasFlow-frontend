@@ -33,7 +33,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
     setLoading(true);
     try {
       const res = await api.post(
-        mode === "register" ? "http://localhost:8000/register" : "http://localhost:8000/login",
+        mode === "register" ? "https://tas-flow-frontend.vercel.app/register" : "https://tas-flow-frontend.vercel.app/login",
         data
       );
       localStorage.setItem("access_token", res.data.access_token);

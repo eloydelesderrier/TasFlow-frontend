@@ -88,7 +88,7 @@ export default function BoardPage() {
   // Deletar task
   const handleDeleteTask = async (taskId: number) => {
     try {
-      await api.delete(`http://localhost:8000/deletar-task/${taskId}`);
+      await api.delete(`https://tas-flow-frontend.vercel.app/deletar-task/${taskId}`);
       const res = await api.get(`http://localhost:8000/${boardId}/lists`);
       setLists(res.data);
     } catch (err) {
