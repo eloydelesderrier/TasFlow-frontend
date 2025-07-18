@@ -88,7 +88,7 @@ export default function Navbar() {
           </div>
         ) : (
           <div className="flex gap-4 items-center">
-            <Link href="https://fastapi-production-c6b2.up.railway.app/login" className="text-gray-700 hover:text-blue-600">
+            <Link href="/login" className="text-gray-700 hover:text-blue-600">
               Entrar
             </Link>
             <Link
