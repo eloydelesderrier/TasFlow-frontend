@@ -75,7 +75,7 @@ export default function BoardPage() {
   // Editar task
   const handleSaveEdit = async (task: Task) => {
     try {
-      await api.put(`http://localhost:8000/editar-task/${task.id}`, task);
+      await api.put(`https://tas-flow-frontend.vercel.app/${task.id}`, task);
       const res = await api.get(`https://tas-flow-frontend.vercel.app/${boardId}/lists`);
       setLists(res.data);
       setEditingTask(null);
