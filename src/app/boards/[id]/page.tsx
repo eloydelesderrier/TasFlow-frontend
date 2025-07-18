@@ -32,7 +32,7 @@ export default function BoardPage() {
   useEffect(() => {
     const fetchLists = async () => {
       try {
-        const res = await api.get(`http://localhost:8000/${boardId}/lists`);
+        const res = await api.get(`https://tas-flow-frontend.vercel.app/${boardId}/lists`);
         setLists(res.data);
       } catch (err) {
         console.error("Erro ao buscar listas:", err);
@@ -47,12 +47,12 @@ export default function BoardPage() {
   // Criar lista
   const handleCreateList = async (titulo: string) => {
     try {
-      await api.post("http://localhost:8000/criar-lista/", {
+      await api.post("https://tas-flow-frontend.vercel.app/criar-lista/", {
         titulo,
         posicao: lists.length,
         board_id: boardId,
       });
-      const res = await api.get(`http://localhost:8000/${boardId}/lists`);
+      const res = await api.get(`https://tas-flow-frontend.vercel.app/${boardId}/lists`);
       setLists(res.data);
     } catch (err) {
       console.error("Erro ao criar lista:", err);
@@ -63,8 +63,8 @@ export default function BoardPage() {
   // Criar task
   const handleCreateTask = async (task: Omit<Task, "id">) => {
     try {
-      await api.post("http://localhost:8000/criar-tasks/", task);
-      const res = await api.get(`http://localhost:8000/${boardId}/lists`);
+      await api.post("https://tas-flow-frontend.vercel.app/criar-tasks/", task);
+      const res = await api.get(`https://tas-flow-frontend.vercel.app/${boardId}/lists`);
       setLists(res.data);
     } catch (err) {
       console.error("Erro ao criar task:", err);
@@ -76,7 +76,7 @@ export default function BoardPage() {
   const handleSaveEdit = async (task: Task) => {
     try {
       await api.put(`http://localhost:8000/editar-task/${task.id}`, task);
-      const res = await api.get(`http://localhost:8000/${boardId}/lists`);
+      const res = await api.get(`https://tas-flow-frontend.vercel.app/${boardId}/lists`);
       setLists(res.data);
       setEditingTask(null);
     } catch (err) {
@@ -89,7 +89,7 @@ export default function BoardPage() {
   const handleDeleteTask = async (taskId: number) => {
     try {
       await api.delete(`https://tas-flow-frontend.vercel.app/deletar-task/${taskId}`);
-      const res = await api.get(`http://localhost:8000/${boardId}/lists`);
+      const res = await api.get(`https://tas-flow-frontend.vercel.app/${boardId}/lists`);
       setLists(res.data);
     } catch (err) {
       console.error("Erro ao deletar task:", err);
@@ -143,7 +143,7 @@ export default function BoardPage() {
       setLists(newLists);
 
       try {
-        await api.put(`http://localhost:8000/editar-task/${movedTask.id}`, {
+        await api.put(`https://tas-flow-frontend.vercel.app/editar-task/${movedTask.id}`, {
           ...movedTask,
           posicao: movedTask.posicao,
           list_id: newLists[targetListIndex].id,
