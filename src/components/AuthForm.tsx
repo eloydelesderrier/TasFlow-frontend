@@ -37,7 +37,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
         data
       );
       localStorage.setItem("access_token", res.data.access_token);
-      window.location.href = "https://fastapi-production-c6b2.up.railway.app/boards/";
+      window.location.href = "/boards/";
      
       
     } catch (err: any) {
