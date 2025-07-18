@@ -33,7 +33,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
     setLoading(true);
     try {
       const res = await api.post(
-        mode === "register" ? "https://fastapi-production-c6b2.up.railway.app/register" : "https://fastapi-production-c6b2.up.railway.app/login",
+        mode === "register" ? "https://fastapi-production-c6b2.up.railway.app/register" : "/login",
         data
       );
       localStorage.setItem("access_token", res.data.access_token);
