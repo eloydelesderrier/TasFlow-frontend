@@ -143,7 +143,7 @@ export default function BoardPage() {
       setLists(newLists);
 
       try {
-        await api.put(`fastapi-production-c6b2.up.railway.app/editar-task/${movedTask.id}`, {
+        await api.put(`https://fastapi-production-c6b2.up.railway.app/editar-task/${movedTask.id}`, {
           ...movedTask,
           posicao: movedTask.posicao,
           list_id: newLists[targetListIndex].id,

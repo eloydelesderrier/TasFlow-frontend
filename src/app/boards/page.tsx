@@ -32,7 +32,7 @@ export default function BoardsPage() {
     if (!titulo.trim()) return alert("Título é obrigatório");
 
     try {
-      await api.post("fastapi-production-c6b2.up.railway.app/criar-boards/", {
+      await api.post("https://fastapi-production-c6b2.up.railway.app/criar-boards/", {
         titulo,
         descricao,
       });
@@ -49,7 +49,7 @@ export default function BoardsPage() {
     if (!confirm("Tem certeza que deseja excluir este quadro?")) return;
 
     try {
-      await api.delete(`fastapi-production-c6b2.up.railway.app/deletar-board/${id}`);
+      await api.delete(`https://fastapi-production-c6b2.up.railway.app/deletar-board/${id}`);
       fetchBoards();
     } catch (error) {
       console.error("Erro ao deletar quadro:", error);
@@ -61,7 +61,7 @@ export default function BoardsPage() {
     if (!editTitulo.trim()) return alert("Título é obrigatório");
 
     try {
-      await api.put(`fastapi-production-c6b2.up.railway.app/editar-board/${editBoardId}`, {
+      await api.put(`https://fastapi-production-c6b2.up.railway.app/editar-board/${editBoardId}`, {
         titulo: editTitulo,
         descricao: editDescricao,
       });

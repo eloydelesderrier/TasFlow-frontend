@@ -33,11 +33,11 @@ export default function AuthForm({ mode }: AuthFormProps) {
     setLoading(true);
     try {
       const res = await api.post(
-        mode === "register" ? "fastapi-production-c6b2.up.railway.app/register" : "fastapi-production-c6b2.up.railway.app/login",
+        mode === "register" ? "https://fastapi-production-c6b2.up.railway.app/register" : "https://fastapi-production-c6b2.up.railway.app/login",
         data
       );
       localStorage.setItem("access_token", res.data.access_token);
-      window.location.href = "fastapi-production-c6b2.up.railway.app/boards/";
+      window.location.href = "https://fastapi-production-c6b2.up.railway.app/boards/";
      
       
     } catch (err: any) {
