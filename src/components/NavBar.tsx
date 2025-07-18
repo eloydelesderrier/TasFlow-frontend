@@ -56,7 +56,7 @@ export default function Navbar() {
               dropdownOpen && (
                 <div className="absolute right-0 top-10 bg-white border rounded shadow-lg w-40 z-10">
                   <Link
-                    href="https://fastapi-production-c6b2.up.railway.app/boards"
+                    href="/boards"
                     className="block px-4 py-2 hover:bg-gray-100 text-sm text-blue-600"
                   >
                     Meus Quadros
@@ -72,7 +72,7 @@ export default function Navbar() {
             ) : (
               <>
                 <Link
-                  href="https://fastapi-production-c6b2.up.railway.app/boards"
+                  href="/boards"
                   className="text-sm px-3 py-2 text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition"
                 >
                   Meus Quadros
@@ -92,7 +92,7 @@ export default function Navbar() {
               Entrar
             </Link>
             <Link
-              href="https://fastapi-production-c6b2.up.railway.app/register"
+              href="/register"
               className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
             >
               Cadastrar
