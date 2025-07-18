@@ -3,6 +3,7 @@ import axios from "axios"
 const instance = axios.create({
   baseURL: "https://fastapi-production-c6b2.up.railway.app",
   headers: {
+    method: 'POST',
     "Content-Type": "application/json",
   },
 })
