@@ -33,11 +33,11 @@ export default function AuthForm({ mode }: AuthFormProps) {
     setLoading(true);
     try {
       const res = await api.post(
-        mode === "register" ? "https://tas-flow-frontend.vercel.app/register" : "https://tas-flow-frontend.vercel.app/login",
+        mode === "register" ? "fastapi-production-c6b2.up.railway.app/register" : "fastapi-production-c6b2.up.railway.app/login",
         data
       );
       localStorage.setItem("access_token", res.data.access_token);
-      window.location.href = "https://tas-flow-frontend.vercel.app/boards/";
+      window.location.href = "fastapi-production-c6b2.up.railway.app/boards/";
      
       
     } catch (err: any) {

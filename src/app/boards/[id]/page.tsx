@@ -32,7 +32,7 @@ export default function BoardPage() {
   useEffect(() => {
     const fetchLists = async () => {
       try {
-        const res = await api.get(`https://tas-flow-frontend.vercel.app/${boardId}/lists`);
+        const res = await api.get(`fastapi-production-c6b2.up.railway.app/${boardId}/lists`);
         setLists(res.data);
       } catch (err) {
         console.error("Erro ao buscar listas:", err);
@@ -47,12 +47,12 @@ export default function BoardPage() {
   // Criar lista
   const handleCreateList = async (titulo: string) => {
     try {
-      await api.post("https://tas-flow-frontend.vercel.app/criar-lista/", {
+      await api.post("fastapi-production-c6b2.up.railway.app/criar-lista/", {
         titulo,
         posicao: lists.length,
         board_id: boardId,
       });
-      const res = await api.get(`https://tas-flow-frontend.vercel.app/${boardId}/lists`);
+      const res = await api.get(`fastapi-production-c6b2.up.railway.app/${boardId}/lists`);
       setLists(res.data);
     } catch (err) {
       console.error("Erro ao criar lista:", err);
@@ -63,8 +63,8 @@ export default function BoardPage() {
   // Criar task
   const handleCreateTask = async (task: Omit<Task, "id">) => {
     try {
-      await api.post("https://tas-flow-frontend.vercel.app/criar-tasks/", task);
-      const res = await api.get(`https://tas-flow-frontend.vercel.app/${boardId}/lists`);
+      await api.post("fastapi-production-c6b2.up.railway.app/criar-tasks/", task);
+      const res = await api.get(`fastapi-production-c6b2.up.railway.app/${boardId}/lists`);
       setLists(res.data);
     } catch (err) {
       console.error("Erro ao criar task:", err);
@@ -75,8 +75,8 @@ export default function BoardPage() {
   // Editar task
   const handleSaveEdit = async (task: Task) => {
     try {
-      await api.put(`https://tas-flow-frontend.vercel.app/${task.id}`, task);
-      const res = await api.get(`https://tas-flow-frontend.vercel.app/${boardId}/lists`);
+      await api.put(`fastapi-production-c6b2.up.railway.app/${task.id}`, task);
+      const res = await api.get(`fastapi-production-c6b2.up.railway.app/${boardId}/lists`);
       setLists(res.data);
       setEditingTask(null);
     } catch (err) {
@@ -88,8 +88,8 @@ export default function BoardPage() {
   // Deletar task
   const handleDeleteTask = async (taskId: number) => {
     try {
-      await api.delete(`https://tas-flow-frontend.vercel.app/deletar-task/${taskId}`);
-      const res = await api.get(`https://tas-flow-frontend.vercel.app/${boardId}/lists`);
+      await api.delete(`fastapi-production-c6b2.up.railway.app/deletar-task/${taskId}`);
+      const res = await api.get(`fastapi-production-c6b2.up.railway.app/${boardId}/lists`);
       setLists(res.data);
     } catch (err) {
       console.error("Erro ao deletar task:", err);
@@ -143,7 +143,7 @@ export default function BoardPage() {
       setLists(newLists);
 
       try {
-        await api.put(`https://tas-flow-frontend.vercel.app/editar-task/${movedTask.id}`, {
+        await api.put(`fastapi-production-c6b2.up.railway.app/editar-task/${movedTask.id}`, {
           ...movedTask,
           posicao: movedTask.posicao,
           list_id: newLists[targetListIndex].id,
