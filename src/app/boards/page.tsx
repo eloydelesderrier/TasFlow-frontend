@@ -17,7 +17,7 @@ export default function BoardsPage() {
 
   const fetchBoards = async () => {
     try {
-      const res = await api.get("http://localhost:8000/listar-boards/");
+      const res = await api.get("https://tas-flow-frontend.vercel.app/listar-boards/");
       setBoards(res.data);
     } catch (error) {
       console.error("Erro ao buscar boards:", error);
@@ -32,7 +32,7 @@ export default function BoardsPage() {
     if (!titulo.trim()) return alert("Título é obrigatório");
 
     try {
-      await api.post("http://localhost:8000/criar-boards/", {
+      await api.post("https://tas-flow-frontend.vercel.app/criar-boards/", {
         titulo,
         descricao,
       });
@@ -49,7 +49,7 @@ export default function BoardsPage() {
     if (!confirm("Tem certeza que deseja excluir este quadro?")) return;
 
     try {
-      await api.delete(`http://localhost:8000/deletar-board/${id}`);
+      await api.delete(`https://tas-flow-frontend.vercel.app/deletar-board/${id}`);
       fetchBoards();
     } catch (error) {
       console.error("Erro ao deletar quadro:", error);

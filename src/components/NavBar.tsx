@@ -56,7 +56,7 @@ export default function Navbar() {
               dropdownOpen && (
                 <div className="absolute right-0 top-10 bg-white border rounded shadow-lg w-40 z-10">
                   <Link
-                    href="/boards"
+                    href="https://tas-flow-frontend.vercel.app/boards"
                     className="block px-4 py-2 hover:bg-gray-100 text-sm text-blue-600"
                   >
                     Meus Quadros
@@ -72,7 +72,7 @@ export default function Navbar() {
             ) : (
               <>
                 <Link
-                  href="/boards"
+                  href="https://tas-flow-frontend.vercel.app/boards"
                   className="text-sm px-3 py-2 text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition"
                 >
                   Meus Quadros
@@ -88,11 +88,11 @@ export default function Navbar() {
           </div>
         ) : (
           <div className="flex gap-4 items-center">
-            <Link href="/login" className="text-gray-700 hover:text-blue-600">
+            <Link href="https://tas-flow-frontend.vercel.app/login" className="text-gray-700 hover:text-blue-600">
               Entrar
             </Link>
             <Link
-              href="/register"
+              href="https://tas-flow-frontend.vercel.app/register"
               className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
             >
               Cadastrar

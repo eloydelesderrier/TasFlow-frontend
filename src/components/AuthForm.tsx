@@ -37,7 +37,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
         data
       );
       localStorage.setItem("access_token", res.data.access_token);
-      window.location.href = "/boards/";
+      window.location.href = "https://tas-flow-frontend.vercel.app/boards/";
      
       
     } catch (err: any) {
